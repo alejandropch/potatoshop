@@ -3,4 +3,8 @@ h1 {
   font-weight: 1000;
   font-size: 3rem;
 }
+
+body {
+  background-color: gray;
+}
 /*# sourceMappingURL=app.css.map */
