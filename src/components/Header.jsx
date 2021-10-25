@@ -4,8 +4,8 @@ import '../styles/components/Header.css'
 const Header = () => (
         <div className="Header">
             
-            <div className="Header-title">PotatoShop</div>
-            <div className="Header-checkout">Checkout</div>
+            <h1 className="Header-title">PotatoShop</h1>
+            <p className="Header-checkout">Checkout</p>
 
         </div>
     )
