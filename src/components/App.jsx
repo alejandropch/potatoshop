@@ -1,6 +1,10 @@
 import React from 'react'
 
-const App=()=>{
-    <h1>Hi</h1>
+const App=()=> {
+
+    return (
+        <h1>Hi, you were missing around for many hours. See?</h1>
+
+    )
 }
 export default App
