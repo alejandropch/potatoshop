@@ -1,6 +1,6 @@
 import React from 'react'
 import '../styles/components/Checkout.css'
-
+ 
 export default function Checkout() {
     return (
         <div className="Checkout">
