@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import '../styles/components/Information.css'
 
 export default function Information() {
@@ -29,7 +30,9 @@ export default function Information() {
             Go back
         </div>
         <div className="Information-next">
-            Purchase
+            <Link to="/checkout/payment">
+                Purchase
+            </Link>
         </div>
     </div>
     </div>
