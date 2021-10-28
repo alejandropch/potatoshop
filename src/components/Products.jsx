@@ -6,7 +6,7 @@ import AppContext from '../context/AppContext'
 export default function Products() {
   const {state,addToCart}= useContext(AppContext)
   const {products} =state
-
+    
    return (
     <div className="Products">
       <div className="Products-items">

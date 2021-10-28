@@ -5,6 +5,13 @@ const useInitialState = () => {
   const [state, setState] = useState(initialState)
 
   const addToCart = (payload) => {
+    // Creating a id purchase to identify the item
+    // I use the split method to just  get the decimal part of the random number
+
+    const idPurchase=Math.random().toString().split('.')[1]
+    // eslint-disable-next-line no-param-reassign
+    payload.idpurchase=idPurchase
+    console.log(payload)
     setState({
       ...state,
       // bring all the cart and the add it what payload is carrying
