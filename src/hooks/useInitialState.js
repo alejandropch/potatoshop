@@ -8,22 +8,23 @@ const useInitialState = () => {
     // Creating a id purchase to identify the item
     // I use the split method to just  get the decimal part of the random number
 
-    const idPurchase=Math.random().toString().split('.')[1]
+    const idPurchase=Number(Math.random().toString().split('.')[1])
     // eslint-disable-next-line no-param-reassign
     payload.idpurchase=idPurchase
-    console.log(payload)
     setState({
       ...state,
       // bring all the cart and the add it what payload is carrying
       cart: [...state.cart, payload],
     })
+console.log(state)
+ 
   }
   const removeFromCart = (payload) => {
     setState({
       ...state,
-      cart: state.cart.filter((items) => items.id !== payload.id),
-    })
-  }
+      cart: state.cart.filter( items =>(items.idpurchase !== payload.idpurchase))
+    
+  })}
   return {
     addToCart,
     removeFromCart,

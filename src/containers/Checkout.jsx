@@ -10,16 +10,12 @@ export default function Checkout() {
 
   const getTotalPrice=()=>{
    
-    let price=0;
-    
-    if(cart.length>0){
-      cart.forEach((item)=>{
-        price+=item.price
-      })
-    } 
-   
-    return price
+      const reducer=(previousValue, currentValue)=>previousValue+currentValue.price
       
+      const sum =cart.reduce(reducer,0)
+      console.log({sum})
+      return sum
+   
   }
   return (
     <div className="Checkout">
@@ -50,7 +46,7 @@ export default function Checkout() {
      
       </div>
       <div className="Checkout-sidebar">
-        <h3>Total price: ${getTotalPrice()}</h3>
+        <h3>{`Total price: $${getTotalPrice()}`}</h3>
         <Link to="/checkout/information">
           <button type="button">Proceed to checkout</button>
         </Link>
