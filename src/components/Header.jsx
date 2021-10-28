@@ -13,12 +13,13 @@ const Header = () =>{
     <h1 className="Header-title">
       <Link to="/">Potato Shop</Link>
     </h1>
-    <p className="Header-checkout">
+    <div className="Header-checkout">
       <Link to="/checkout">
         <i className="fas fa-shopping-basket" />
       </Link>
-    </p>
-    {cart.length>0 && <div className="Header-alert">{cart.length}</div>}
+      {cart.length>0 && <div className="Header-alert">{cart.length}</div>}
+
+    </div>
   </div>
 )
 }

@@ -7,14 +7,12 @@ export default function Products() {
   const {state,addToCart}= useContext(AppContext)
   const {products} =state
 
-  const handleAddToCart =(product)=> {
-      addToCart(product)
-  }
    return (
     <div className="Products">
       <div className="Products-items">
-        {products.map((product) => (
-          <Product key={products.id} product={product} handleAddToCart={handleAddToCart}/>
+        {
+        products.map(product => (
+          <Product key={product.id} product={product} handleAddToCart={()=>addToCart(product)}/>
         ))}
       </div>
     </div>
