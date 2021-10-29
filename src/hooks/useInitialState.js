@@ -11,7 +11,6 @@ const useInitialState = () => {
       // bring all the cart and the add it what payload is carrying
       cart: [...state.cart, payload],
     })
-console.log(payload)
  
   }
   const removeFromCart = (payload) => {
@@ -20,9 +19,13 @@ console.log(payload)
       cart: state.cart.filter( items =>(items.idpurchase !== payload.idpurchase))
     
   })}
+
+  // eslint-disable-next-line no-unused-vars
+  const addToBuyer = (buyer) => {}
   return {
     addToCart,
     removeFromCart,
+    addToBuyer,
     state,
   }
 }

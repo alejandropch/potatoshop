@@ -1,8 +1,23 @@
-import React from 'react'
+import React,{ useRef, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/components/Information.css'
+import AppContext from '../context/AppContext'
 
 export default function Information() {
+  // eslint-disable-next-line no-unused-vars
+  const {state, addToBuyer}= useContext(AppContext)
+  const form=useRef(null)
+
+  const {cart}=state
+const handleSubmit=()=>{
+
+  const formData = new FormData(form.current);
+  const buyer = Object.fromEntries(formData);
+  console.log(buyer);
+  }
+
+
+
   return (
     <div className="Information">
       <div className="Information-content">
@@ -10,7 +25,7 @@ export default function Information() {
           <h2>Contact information</h2>
         </div>
         <div className="Information-form">
-          <form action="">
+          <form ref={form}>
             <input type="text" placeholder="Full name" name="name" id="" />
             <input type="text" placeholder="Email" name="email" id="" />
             <input type="text" placeholder="Address" name="address" id="" />
@@ -23,21 +38,41 @@ export default function Information() {
           </form>
         </div>
         <div className="Information-buttons">
-          <div className="Information-back">Go back</div>
+          <div className="Information-back">
+            <Link to='/checkout'>
+              Go back
+            </Link>
+            </div>
           <div className="Information-next">
-            <Link to="/checkout/payment">Purchase</Link>
+            <button type="button" onClick={handleSubmit}> Place order</button>
           </div>
         </div>
       </div>
 
       <div className="Information-sidebar">
-        <h3>Item: </h3>
-        <div className="Information-item">
+        <h3>Products: </h3>
+        {
+          cart.map>0?
+
+          cart.map(item=>(
+
+          <div className="Information-item">
           <div className="Information-element">
-            <h4>Name of item</h4>
-            <span>$5</span>
+            <h4>{item.name}</h4>
+            <span>${item.price}</span>
           </div>
-        </div>
+          </div>
+          )
+         )
+         : 
+         <div className="Information-item">
+         <div className="Information-element">
+           <h4>Your cart looks empty :(</h4>
+          
+         </div>
+         </div>
+        }
+        
       </div>
     </div>
   )
