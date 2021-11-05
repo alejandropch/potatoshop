@@ -1,21 +1,25 @@
 import React,{ useRef, useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import '../styles/components/Information.css'
 import AppContext from '../context/AppContext'
+
 
 export default function Information() {
   // eslint-disable-next-line no-unused-vars
   const {state, addToBuyer}= useContext(AppContext)
   const form=useRef(null)
-
+  const history=useHistory()
   const {cart}=state
-const handleSubmit=()=>{
+  console.log(Object.keys(cart).length);
 
+const handleSubmit=()=>{ 
   const formData = new FormData(form.current);
   const buyer = Object.fromEntries(formData);
-  console.log(buyer);
+  
+  addToBuyer(buyer)
+    history.push('/checkout/payment')
+    
   }
-
 
 
   return (
@@ -52,13 +56,14 @@ const handleSubmit=()=>{
       <div className="Information-sidebar">
         <h3>Products: </h3>
         {
-          cart.map>0?
+
+          Object.keys(cart).length>0?
 
           cart.map(item=>(
 
           <div className="Information-item">
           <div className="Information-element">
-            <h4>{item.name}</h4>
+            <h4>{item.title}</h4>
             <span>${item.price}</span>
           </div>
           </div>
