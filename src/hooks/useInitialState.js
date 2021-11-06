@@ -20,12 +20,19 @@ const useInitialState = () => {
     
   })}
 
+  const addNewOrder= payload=>{
+    setState({
+      ...state,
+      orders:[...state.orders,payload],
+    })
+  }
   // eslint-disable-next-line no-unused-vars
   const addToBuyer = (buyer) => {}
   return {
     addToCart,
     removeFromCart,
     addToBuyer,
+    addNewOrder,
     state,
   }
 }

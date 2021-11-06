@@ -10,7 +10,6 @@ export default function Information() {
   const form=useRef(null)
   const history=useHistory()
   const {cart}=state
-  console.log(Object.keys(cart).length);
 
 const handleSubmit=()=>{ 
   const formData = new FormData(form.current);
