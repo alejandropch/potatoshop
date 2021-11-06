@@ -13,7 +13,7 @@ export default function Payment() {
   const {cart,buyer} = state;
 
   const paypalOptions={
-    clientId:'access_token$sandbox$mxwfsc5hgfqjzmvg$943f2411fea655c00512f5a2c08cfe8d',
+    clientId:String(process.env.CLIENT_ID),
     intent:'capture',
     currency:'USD'
   }
