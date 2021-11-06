@@ -1,7 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const Dotenv=require('dotenv-webpack')
+const DotenvPlugin=require('dotenv-webpack')
 
 module.exports = {
   // donde empieza la ramificación
@@ -52,7 +52,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'assets/[name].css',
     }),
-    new Dotenv(),
+    new DotenvPlugin(),
   ],
   devServer: {
     static: {
