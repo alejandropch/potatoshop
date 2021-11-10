@@ -18,7 +18,7 @@ export default function Checkout() {
           cart.length>0 ? 
 
           cart.map((item)=>(
-            <div className="Checkout-item"> 
+            <div className="Checkout-item" key={item.idpurchase}> 
 
               <div className="Checkout-element">
                 <h4>{item.title} </h4>

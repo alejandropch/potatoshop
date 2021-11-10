@@ -27,7 +27,13 @@ const useInitialState = () => {
     })
   }
   // eslint-disable-next-line no-unused-vars
-  const addToBuyer = (buyer) => {}
+  const addToBuyer = buyer => {
+
+      setState({
+        ...state,
+        buyer:[buyer]
+      })
+  }
   return {
     addToCart,
     removeFromCart,

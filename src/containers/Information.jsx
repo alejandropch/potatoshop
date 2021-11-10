@@ -14,8 +14,8 @@ export default function Information() {
 const handleSubmit=()=>{ 
   const formData = new FormData(form.current);
   const buyer = Object.fromEntries(formData);
-  
   addToBuyer(buyer)
+
     history.push('/checkout/payment')
     
   }
@@ -60,7 +60,7 @@ const handleSubmit=()=>{
 
           cart.map(item=>(
 
-          <div className="Information-item">
+          <div className="Information-item" key={item.idpurchase}>
           <div className="Information-element">
             <h4>{item.title}</h4>
             <span>${item.price}</span>

@@ -31,9 +31,10 @@ const handlePaymentSuccess=data=>{
         products:cart,
         payment:data
       }
+      addNewOrder(newOrder);
+
       history.push('/checkout/success')
       
-      addNewOrder(newOrder);
     }
 
 }
