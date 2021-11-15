@@ -1,0 +1,15 @@
+{
+    "short_name": "Potato Shop Store",
+    "name": "Just Potato products",
+    "icons": [
+      {
+        "src": "assets/icon.png",
+        "sizes": "140x140",
+        "type": "image/png"
+      }
+    ],
+    "start_url": "/",
+    "background_color": "#222",
+    "theme_color": "#222",
+    "display": "standalone"
+  }
