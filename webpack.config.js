@@ -1,4 +1,5 @@
 const path = require('path')
+const webpack=require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const DotenvPlugin=require('dotenv-webpack')
@@ -53,6 +54,12 @@ module.exports = {
       filename: 'assets/[name].css',
     }),
     new DotenvPlugin(),
+    new webpack.DefinePlugin({
+      'process.env':{
+        'PAYPAL_CLIENT_ID':JSON.stringify(process.env.PAYPAL_CLIENT_ID),
+        'GOOGLE_MAPS_API_KEY':JSON.stringify(process.env.GOOGLE_MAPS_API_KEY)
+      }
+    })
   ],
   devServer: {
     static: {
