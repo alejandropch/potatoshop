@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const webpack=require('webpack')
 const DotenvPlugin=require('dotenv-webpack')
+require('dotenv').config()
 
 module.exports = {
   // donde empieza la ramificación
@@ -60,9 +61,9 @@ module.exports = {
 			defaults: false
     }),
     new webpack.DefinePlugin({
-      'process.env': {
-        PAYPAL_CLIENT_ID: JSON.stringify(process.env.PAYPAL_CLIENT_ID),
-        GOOGLE_MAPS_API_KEY: JSON.stringify(process.env.GOOGLE_MAPS_API_KEY)
+      'process.env':{
+        'PAYPAL_CLIENT_ID': JSON.stringify(process.env.PAYPAL_CLIENT_ID),
+        'GOOGLE_MAPS_API_KEY': JSON.stringify(process.env.GOOGLE_MAPS_API_KEY)
       }
     })
   ],
