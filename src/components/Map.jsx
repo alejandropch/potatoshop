@@ -1,6 +1,7 @@
 /* eslint-disable use-isnan */
 import React from 'react'
  import {GoogleMap,LoadScript,Marker} from '@react-google-maps/api'
+ 
 // import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 
 const Map= ({ data })=> {
@@ -14,7 +15,7 @@ const Map= ({ data })=> {
         }
         return (
 
-            <LoadScript googleMapsApiKey={String(process.env.GOOGLE_MAPS_API_KEY)}>
+            <LoadScript googleMapsApiKey={`${process.env.GOOGLE_MAPS_API_KEY}`}>
                 <GoogleMap
                     mapContainerStyle={MapStyles}
                     zoom={16}

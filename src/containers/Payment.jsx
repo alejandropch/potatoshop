@@ -11,9 +11,9 @@ export default function Payment() {
   const {state,addNewOrder} = useContext(AppContext)
   const history= useHistory()
   const {cart,buyer} = state;
-
   const paypalOptions={
     clientId:String(process.env.PAYPAL_CLIENT_ID),
+
     intent:'capture',
     currency:'USD'
   }
